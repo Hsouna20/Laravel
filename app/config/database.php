@@ -63,16 +63,17 @@ return array(
 			'prefix'    => '',
 		),
 
-		'pgsql' => array(
-			'driver'   => 'pgsql',
-			'host'     => 'localhost',
-			'database' => 'database',
-			'username' => 'root',
-			'password' => '',
-			'charset'  => 'utf8',
-			'prefix'   => '',
-			'schema'   => 'public',
-		),
+'pgsql' => array(
+    'driver'   => 'pgsql',
+    'host'     => 'localhost',
+    'database' => 'laravelmedianet',
+    'username' => 'hassenmedianet',
+    'password' => 'StageMedianet2023@',
+    'charset'  => 'utf8',
+    'prefix'   => '',
+    'schema'   => 'public',
+),
+
 
 		'sqlsrv' => array(
 			'driver'   => 'sqlsrv',
@@ -113,11 +114,8 @@ return array(
 
 		'cluster' => true,
 
-		'default' => array(
-			'host'     => '127.0.0.1',
-			'port'     => 6379,
-			'database' => 0,
-		),
+'default' => 'pgsql',
+
 
 	),
 
