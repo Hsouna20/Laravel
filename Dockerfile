@@ -19,4 +19,4 @@ COPY . .
 EXPOSE 9000
 
 # Start PHP-FPM
-CMD ["php-fpm"]
+CMD ["php-fpm", "-F"]
