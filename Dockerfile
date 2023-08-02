@@ -14,7 +14,11 @@ WORKDIR /var/www/html
 
 # Copy the application code into the container
 COPY . .
+# Copy the start script into the container
+COPY start.sh /usr/local/bin/start.sh   # Add this line
 
+# Give execute permissions to the start script
+RUN chmod +x /usr/local/bin/start.sh    # Add this line
 # Expose the port for PHP-FPM
 EXPOSE 9000
 
