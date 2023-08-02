@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+  webapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: Laravel_webapp
+    ports:
+      - "8000:80"
+    volumes:
+      - ./:/var/www/html
+    environment:
+      DB_CONNECTION: pgsql
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_DATABASE: laravelmedianet
+      DB_USERNAME: hassenmedianet
+      DB_PASSWORD: StageMedianet2023@
+    networks:
+      - webapp
+
+  postgres:
+    image: postgres:13
+    container_name: Laravel_postgres
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: hassenmedianet
+      POSTGRES_PASSWORD: StageMedianet2023@
+      POSTGRES_DB: laravelmedianet
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    networks:
+      - webapp
+
+networks:
+  webapp:
+
+volumes:
+  pg_data:
