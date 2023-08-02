@@ -19,6 +19,7 @@ services:
       DB_PASSWORD: StageMedianet2023@
     networks:
       - webapp
+    entrypoint: ["./start.sh"]  # Specify the custom entrypoint script
 
   postgres:
     image: postgres:13
