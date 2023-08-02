@@ -15,10 +15,10 @@ WORKDIR /var/www/html
 # Copy the application code into the container
 COPY . .
 # Copy the start script into the container
-COPY start.sh /usr/local/bin/start.sh   # Add this line
+COPY start.sh /usr/local/bin/start.sh   # Make sure start.sh is in the same directory as the Dockerfile
 
 # Give execute permissions to the start script
-RUN chmod +x /usr/local/bin/start.sh    # Add this line
+RUN chmod +x /usr/local/bin/start.sh
 # Expose the port for PHP-FPM
 EXPOSE 9000
 
