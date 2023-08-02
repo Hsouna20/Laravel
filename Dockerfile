@@ -8,15 +8,17 @@ RUN set -ex \
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+# Copy the start script into the container
+COPY start.sh /usr/local/bin/start.sh
 
+# Give execute permissions to the start script
+RUN chmod +x /usr/local/bin/start.sh
 # Set the working directory in the container
 WORKDIR /var/www/html
 
 # Add all files from the current directory to the working directory in the container
-ADD . .
+COPY . .
 
-# Give execute permissions to the start script
-RUN chmod +x /usr/local/bin/start.sh
 # Expose the port for PHP-FPM
 EXPOSE 9000
 
