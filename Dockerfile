@@ -12,10 +12,8 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # Set the working directory in the container
 WORKDIR /var/www/html
 
-# Copy the application code into the container
-COPY . .
-# Copy the start script into the container
-COPY start.sh /usr/local/bin/start.sh   # Make sure start.sh is in the same directory as the Dockerfile
+# Add all files from the current directory to the working directory in the container
+ADD . .
 
 # Give execute permissions to the start script
 RUN chmod +x /usr/local/bin/start.sh
