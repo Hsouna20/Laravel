@@ -65,7 +65,7 @@ return array(
 
 'pgsql' => array(
     'driver'   => 'pgsql',
-    'host'     => 'localhost',
+    'host'     => 'laravel_postgres',
     'database' => 'laravelmedianet',
     'username' => 'hassenmedianet',
     'password' => 'StageMedianet2023@',
